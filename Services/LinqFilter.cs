@@ -20,7 +20,9 @@ public class LinqFilter
   public static void FiltrarAtistasPorGenero(List<Musica> musica, string genero)
   {
     var artistasPorGenero = musica
-    .Where(musica => musica.Genero!.Contains(genero))
+    .Where(musica => musica.Genero!
+      .Contains(genero)
+    )
     .Select(musica => musica.Artista)
     .Distinct()
     .ToList();
